@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cursos de Informática</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    /* Cores SENAI */
+    :root {
+      --senai-red: rgb(237, 27, 36);
+      --senai-dark: rgb(34, 34, 34);
+      --senai-light: rgb(248, 249, 250);
+    }
+
+    /* Estilos personalizados */
+    .curso-destaque {
+      border-left: 4px solid var(--senai-red);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .badge-duracao {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-item {
+      height: 400px;
+    }
+
+    .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .carousel-caption {
+      background: rgba(34, 34, 34, 0.8);
+      border-radius: 10px;
+    }
+
+    footer {
+      background: var(--senai-dark);
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--senai-red);
+      transform: translateY(-3px);
+    }
+
+    /* Botões e elementos interativos */
+    .btn-primary {
+      background-color: var(--senai-red);
+      border-color: var(--senai-red);
+    }
+
+    .btn-primary:hover {
+      background-color: rgb(200, 20, 30);
+      border-color: rgb(180, 20, 30);
+    }
+
+    .modal-header {
+      background-color: var(--senai-red) !important;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: var(--senai-red);
+    }
+
+    .bg-primary {
+      background-color: var(--senai-red) !important;
+    }
+  </style>
+</head>
+
+
+<!-- Slider -->
+<div id="carouselCursos" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://storageimagens.blob.core.windows.net/img/dp900.png" class="d-block w-100" alt="Tecnologia">
+
+    </div>
+    <div class="carousel-item">
+      <img src="https://storageimagens.blob.core.windows.net/img/az900.png" class="d-block w-100" alt="Programação">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCursos" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselCursos" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+
+<!-- Cursos -->
+<main class="container my-5">
+  <div class="row g-4">
+    <!-- Curso 1 - PL 900-->
+    <div class="col-md-4">
+      <div class="card h-100 curso-destaque">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 2.png" class="card-img-top" alt="PL-900">
+          <span class="badge badge-duracao text-white p-2">40h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Microsoft Power Platform Fundamentals - PL 900</h5>
+          <p class="card-text">Domine o mundo do Low Code, Power Apps, Power Automate, Power BI e Power Virtual Agents.
+          </p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso1">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curso 2 - DP 900 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 1.png" class="card-img-top" alt="DP-900">
+          <span class="badge badge-duracao text-white p-2">40h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Implantação e Análise de Dados em Nuvem DP-900</h5>
+          <p class="card-text">Aprenda a trabalhar com dados relacionais e não relacionais</p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso2">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curso 3 - AI -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 5.png" class="card-img-top" alt="AI 900">
+          <span class="badge badge-duracao text-white p-2">30h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Implantação de Serviços de Inteligência Artificial em Nuvem - AI 900</h5>
+          <p class="card-text">Domine o mundo da inteligência artificial e conheça os principais serviços da Microsoft
+            Azure para IA.</p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso3">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+  <!--SEGUNDA LINHA-->
+ 
+  <div class="row g-4">
+    <!-- Curso 1 - AZ - 900 -->
+    <div class="col-md-4">
+      <div class="card h-100 curso-destaque">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 10.png" class="card-img-top" alt="PL-900">
+          <span class="badge badge-duracao text-white p-2">40h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Implantação de Serviços em Nuvem Microsoft AZ- 900 </h5>
+          <p class="card-text">Aprenda a trabalhar com os principais serviços de nuvem da Microsoft Azure.
+          </p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso4">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curso 2 -AWS -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 9.png" class="card-img-top" alt="DP-900">
+          <span class="badge badge-duracao text-white p-2">40h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Implantação de Serviços em Nuvem Microsoft AWS Cloud </h5>
+          <p class="card-text">Aprenda os principais serviços de computação em Nuvem da AWS</p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso5">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curso 3 - Programação em Python no Raspberry (48h) -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="https://storageimagens.blob.core.windows.net/img/Frame 8.png" class="card-img-top" alt="AI 900">
+          <span class="badge badge-duracao text-white p-2">48h</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Programação em Python no Raspberry (48h)</h5>
+          <p class="card-text">Desbrave o Mundo da Automação com Raspberry Pi e Python!</p>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCurso6">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+<!-- Rodapé -->
+<footer class="text-white py-5 mt-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5><i class="bi bi-building"></i> Escola Senai Marília</h5>
+        <p></p>
+        <!-- <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div> -->
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5><i class="bi bi-geo-alt"></i> Contato</h5>
+        <p><i class="bi bi-house"></i> Av. Sampaio Vidal, 1079 - Centro, Marília - SP, 17500-022</p>
+        <p><i class="bi bi-phone"></i>  (14) 3303-3800</p>
+        <p><i class="bi bi-envelope"></i> https://sp.senai.br/unidade/marilia/</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5><i class="bi bi-clock"></i> Horários</h5>
+        <p>Segunda a Sexta: 8h às 22h</p>
+      
+      </div>
+    </div>
+    <hr class="my-4 bg-light">
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025. Escola SENAI "Jose Polizotto". Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+<!-- Modais -->
+<!-- Modal Curso 1 -->
+<div class="modal fade" id="modalCurso1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Microsoft Power Platform Fundamentals - PL 900</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://storageimagens.blob.core.windows.net/img/Frame 4.png" class="img-fluid rounded mb-3" alt="Informática Básica">
+            <div class="d-flex justify-content-between mb-3">
+              <span class="badge bg-primary"><i class="bi bi-clock"></i> 40 horas</span>
+              <span class="badge bg-success"><i class="bi bi-person"></i> Érika A. Barrado</span>
+            </div>
+            <div class="alert alert-info">
+              <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+              14 anos de idade.
+              O aluno deverá ter concluído o Nível Fundamental.
+              Ter conhecimentos na área, adquiridos em cursos ou trabalhos formais e informais.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Descrição do Curso</h5>
+            <p>
+              O Curso PL-900: Microsoft Power Platform Fundamentals é uma introdução aos conceitos básicos da Microsoft
+              Power Platform, uma suíte de ferramentas de baixo código para criar soluções personalizadas.
+            </p>
+
+            <h5 class="mt-4">Conteúdo Programático</h5>
+            <ul class="list-group list-group-flush">
+
+              <li class="list-group-item">1. ✅ Power Platform</li>
+              <li class="list-group-item">2. ✅ Power Apps (Aplicativos Low Code)</li>
+              <li class="list-group-item">3. ✅ Dataverse (Banco de Dados )</li>
+              <li class="list-group-item">4. ✅ Power Automate (Automatização de Tarefas)</li>
+              <li class="list-group-item">5. ✅ Power Pages (Criação de Página Web Low Code)</li>
+              <li class="list-group-item">6. ✅ Copilot (Assistente de IA integrado a várias ferramentas da Microsoft
+                Power Platform)</li>
+            </ul>
+            <br>
+            <h5>Turma</h5>
+            <p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>🔹Microsoft Power Platform Fundamentals PL-900 (40h)</strong>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📅 <strong>Período:</strong> 12/04 a 21/06/202 | 🕖 <strong>Horário:</strong> 08h as
+                    12h</span></span>
+
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📌 <strong>Sábado</strong> </span>
+                  <span>📍 <strong>Modalidade:</strong> Presencial</span>
+                </div>
+              </li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+          target="_blank">
+          <button type="button" class="btn btn-primary">Matricular-se</button>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Curso 2 -->
+<div class="modal fade" id="modalCurso2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Implantação e Análise de Dados em Nuvem - DP 900</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://storageimagens.blob.core.windows.net/img/Frame 6.png" class="img-fluid rounded mb-3" alt="Lógica de Programação">
+            <div class="d-flex justify-content-between mb-3">
+              <span class="badge bg-primary"><i class="bi bi-clock"></i> 40 horas</span>
+              <span class="badge bg-success"><i class="bi bi-person"></i> José Scaquett</span>
+            </div>
+            <div class="alert alert-info">
+              <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+              14 anos de idade.
+              O aluno deverá ter concluído o Nível Fundamental.
+              Ter conhecimento básico de serviços relacionados à nuvem; Ter conhecimentos básicos em banco de dados.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Descrição do Curso</h5>
+            <p>O Curso DP-900: Microsoft Azure Data Fundamentals é uma introdução aos conceitos básicos de dados em
+              nuvem usando os serviços da Microsoft Azure. É ideal para quem está começando na área de dados, analytics
+              e armazenamento em nuvem.</p>
+
+            <h5 class="mt-4">Conteúdo Programático</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">1. ✅ Conceitos Básicos de Dados</li>
+              <li class="list-group-item">2. ✅ Armazenamento de Dados no Azure</li>
+              <li class="list-group-item">3. ✅ Processamento e Análise de Dados</li>
+              <li class="list-group-item">4. ✅ Visualização de Dados com Power BI</li>
+              <li class="list-group-item">5. ✅ Conceitos de Big Data e IA</li>
+
+            </ul>
+            <br>
+            <h5>Turma</h5>
+            <p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>🔹 Implantação e Análise de Dados em Nuvem - Microsoft DP-900 (40h)</strong>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📅 <strong>Período:</strong> 22/04 a 15/05/2025 | 🕖 <strong>Horário:</strong> 19h às
+                    22h</span></span>
+
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📌 <strong>Seg. a Sex.</strong> </span>
+                  <span>📍 <strong>Modalidade:</strong> Presencial</span>
+                </div>
+              </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>🔹 Implantação e Análise de Dados em Nuvem - Microsoft DP-900 (40h)</strong>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📅 <strong>Período:</strong> 24/05 a 09/08 | 🕖 <strong>Horário:</strong> 13h as 17h</span>
+
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <span>📌 <strong>Sábado</strong> </span>
+                  <span>📍 <strong>Modalidade:</strong> Presencial</span>
+                </div>
+              </li>
+            </ul>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+          target="_blank">
+          <button type="button" class="btn btn-primary">Matricular-se</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Curso 3 -->
+<div class="modal fade" id="modalCurso3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Implantação de Serviços de Inteligência Artificial em Nuvem - Microsoft AI-900</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="https://storageimagens.blob.core.windows.net/img/Frame 7.png" class="img-fluid rounded mb-3" alt="Excel Avançado">
+            <div class="d-flex justify-content-between mb-3">
+              <span class="badge bg-primary"><i class="bi bi-clock"></i> 40 horas</span>
+              <span class="badge bg-success"><i class="bi bi-person"></i> Ewerton</span>
+            </div>
+            <div class="alert alert-info">
+              <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+              14 anos de idade.
+              O aluno deverá ter concluído o Nível Fundamental.
+              Ter conhecimentos de lógica de programação.; Ter conhecimento básico de serviços relacionados à nuvem;
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Descrição do Curso</h5>
+            <p>O AI-900 é um curso introdutório sobre Inteligência Artificial (IA) e serviços de IA na nuvem da
+              Microsoft Azure. Ele é voltado para iniciantes e não exige experiência prévia em programação ou IA.</p>
+
+            <h5 class="mt-4">Conteúdo Programático</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">1. ✅ Conceitos Básicos de IA</li>
+              <li class="list-group-item">2. ✅ Serviços de IA no Microsoft Azure</li>
+              <li class="list-group-item">3. ✅ Machine Learning (ML) no Azure</li>
+              <li class="list-group-item">4. ✅ IA para Análise de Dados</li>
+            </ul>
+            <br>
+            <h5>Turma - Cadastro de Reserva</h5>
+            <p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">🔹Implantação de Serviços em Inteligência Artificial em Nuvem - Microsoft
+                AI-900 (40h)</li>
+              <li class="list-group-item">📅 8h as 12h Sábado de manhã </li>
+            </ul>
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+          target="_blank">
+          <button type="button" class="btn btn-primary">Matricular-se</button> </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Curso 4 -->
+<div class="modal fade" id="modalCurso4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Implantação de Serviços em Nuvem Microsoft AZ- 900</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="https://storageimagens.blob.core.windows.net/img/Frame 11.png" class="img-fluid rounded mb-3" alt="Excel Avançado">
+              <div class="d-flex justify-content-between mb-3">
+                <span class="badge bg-primary"><i class="bi bi-clock"></i> 40 horas</span>
+                <span class="badge bg-success"><i class="bi bi-person"></i> Ewerton</span>
+              </div>
+              <div class="alert alert-info">
+                <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+                14 anos de idade.
+                O aluno deverá ter concluído o Nível Fundamental.
+                Ter conhecimentos de lógica de programação.; Ter conhecimento básico de serviços relacionados à nuvem;
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5>Descrição do Curso</h5>
+              <p>O AZ-900 é um curso introdutório aos conceitos básicos de computação em nuvem e aos serviços do Microsoft Azure. Ideal para iniciantes, ele não exige experiência prévia com Azure ou TI..</p>
+  
+              <h5 class="mt-4">Conteúdo Programático</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">1. ✅ O que é computação em nuvem?</li>
+                <li class="list-group-item">2. ✅ Principais Serviços do Azure</li>
+                <li class="list-group-item">3. ✅ Segurança e Governança no Azure</li>
+                <li class="list-group-item">4. ✅ Gerenciamento de Custos e SLA</li>
+                <li class="list-group-item">4. ✅ Gerenciamento de Custos e SLA</li>              </ul>
+              <br>
+              <h5>Turma</h5>
+              <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>🔹 Implantação de Serviços em Nuvem Microsoft AZ900 (40h)</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="d-flex justify-content-between">
+                        <span>📅 <strong>Período:</strong> 14/04 a 06/05/2025  | 🕖 <strong>Horário:</strong> 13h30 as 17h30</span>
+      
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="d-flex justify-content-between">
+                        <span>📌 <strong>Seg. Qua.</strong> </span>
+                        <span>📍 <strong>Modalidade:</strong> Presencial</span>
+                      </div>
+                    </li>
+                  </ul>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+            target="_blank">
+            <button type="button" class="btn btn-primary">Matricular-se</button> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+<!-- Modal Curso 5 -->
+<div class="modal fade" id="modalCurso5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Implantação de Serviços em Nuvem AWS Cloud (40h)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="https://storageimagens.blob.core.windows.net/img/Frame 13.png" class="img-fluid rounded mb-3" alt="AWS">
+              <div class="d-flex justify-content-between mb-3">
+                <span class="badge bg-primary"><i class="bi bi-clock"></i> 40 horas</span>
+                <!--<span class="badge bg-success"><i class="bi bi-person"></i> Ewerton</span>-->
+              </div>
+              <div class="alert alert-info">
+                <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+                14 anos de idade.
+                O aluno deverá ter concluído o Nível Fundamental.
+                Ter conhecimentos de lógica de programação.; Ter conhecimento básico de serviços relacionados à nuvem;
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5>Descrição do Curso</h5>
+              <p>Este curso prepara profissionais para implantar e gerenciar serviços básicos na AWS, seguindo as melhores práticas de cloud computing. É ideal para quem está começando na AWS ou busca a certificação AWS Certified Cloud Practitioner.</p>
+  
+              <h5 class="mt-4">Conteúdo Programático</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">1. ✅ Introdução à AWS e Cloud Computing</li>
+                <li class="list-group-item">2. ✅ Serviços Essenciais da AWS</li>
+                <li class="list-group-item">3. ✅ Segurança e Identidade</li>
+                <li class="list-group-item">4. ✅ Monitoramento e Custos </li>
+                <li class="list-group-item">4. ✅ Implantação Prática </li>
+             
+
+              </ul>
+              <br>
+              <h5>Turma</h5>
+              <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>🔹 Implantação de Serviços em Nuvem AWS Cloud Practitioner (40h)</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="d-flex justify-content-between">
+                        <span>📅 <strong>Período:</strong> 12/04 A 21/06/2025  | 🕖 <strong>Horário:</strong>  13h as 17h</span>
+      
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="d-flex justify-content-between">
+                        <span>📌 <strong>Sábado</strong> </span>
+                        <span>📍 <strong>Modalidade:</strong> Presencial</span>
+                      </div>
+                    </li>
+                  </ul>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+            target="_blank">
+            <button type="button" class="btn btn-primary">Matricular-se</button> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Modal Curso 6 -->
+<div class="modal fade" id="modalCurso6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Programação em Python no Raspberry (48h)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="https://storageimagens.blob.core.windows.net/img/Frame 12.png" class="img-fluid rounded mb-3" alt="Excel Avançado">
+              <div class="d-flex justify-content-between mb-3">
+                <span class="badge bg-primary"><i class="bi bi-clock"></i> 48 horas</span>
+                <span class="badge bg-success"><i class="bi bi-person"></i> Ewerton</span>
+              </div>
+              <div class="alert alert-info">
+                <i class="bi bi-exclamation-circle"></i> Pré-requisito: O aluno deverá, no início do curso, ter no mínimo
+                14 anos de idade.
+                O aluno deverá ter concluído o Nível Fundamental.
+                Ter conhecimentos de lógica de programação.; Ter conhecimento básico de serviços relacionados à nuvem;
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5>Descrição do Curso</h5>
+              <p>Curso prático, ideal para iniciantes e para quem quer aprofundar conhecimentos</p>
+  
+              <h5 class="mt-4">Conteúdo Programático</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">1. ✅ Aprenda desde a configuração do Raspberry Pi até o controle de sensores, LEDs e motores!</li>
+                <li class="list-group-item">2. ✅ Explore projetos de automação, monitoramento e IoT</li>
+                <li class="list-group-item">3. ✅  Integre APIs, crie servidores web e até implemente visão computacional</li>
+             
+              </ul>
+              <br>
+              <h5>Turma</h5>
+              <p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">🔹Implantação de Serviços em Inteligência Artificial em Nuvem - Microsoft
+                  AI-900 (40h)</li>
+                <li class="list-group-item">📅 8h as 12h Sábado de manhã </li>
+              </ul>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlm6jl28zqdQYt-B-tatCqwYvfCSFSSO5uFiTW3Xk8Py8UsA/viewform"
+            target="_blank">
+            <button type="button" class="btn btn-primary">Matricular-se</button> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</body>
+
+</html>

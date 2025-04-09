@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a1f88bbb-800e-414c-b0f5-29a1baeafe70/resourceGroups/aulateste/providers/Microsoft.Web/sites/ficsenaimarilia",
+    "appService.deploySubpath": "."
+}
